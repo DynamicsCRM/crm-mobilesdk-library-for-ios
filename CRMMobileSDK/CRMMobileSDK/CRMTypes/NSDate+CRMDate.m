@@ -6,7 +6,8 @@
 
 - (NSObject *)generateJSON
 {
-    return [NSString stringWithFormat:@"/Date(%ld)/", (long)([self timeIntervalSince1970] * 1000)];
+    long long dateInMilliseconds = ([self timeIntervalSince1970] * 1000);
+    return [NSString stringWithFormat:@"/Date(%lld)/", dateInMilliseconds];
 }
 
 - (NSString *)generateSOAP
